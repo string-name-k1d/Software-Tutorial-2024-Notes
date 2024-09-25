@@ -1,39 +1,3 @@
-[Back to Main](../README.md)
-
-# Classwork 1 : Matrix Addition
-
-> What do mathematicians sleep on? Matrices!!
-
-A matrix is a rectangular arrangement of numbers into rows and columns. Each number in a matrix refers to a matrix element.
-
-To perform matrix addition, you need to have two matrices of the same size. Then you can sum up the entries respectively.
-
-Example:
-
-```math
-A=\begin{bmatrix} a_1 & a_2 \\ a_3 & a_4 \\ a_5 & a_6 \end{bmatrix}
-```
-
-We call the matrix above a $3\times2$ matrix with entries $a_1$ to $a_6$
-
-Now, given another $3\times2$ matrix $B$
-
-```math
-B=\begin{bmatrix} b_1 & b_2 \\ b_3 & b_4 \\ b_5 & b_6 \end{bmatrix}
-```
-
-Since the size of $A$ and
-$B$ are the same, we can perform matrix addition:
-
-```math
-A+B=\begin{bmatrix} a_1+b_1 & a_2+b_2 \\ a_3+b_3 & a_4+b_4 \\ a_5+b_5 & a_6+b_6 \end{bmatrix}
-```
-
-## Task
-
-Implement the code to perform matrix addition.
-
-```c
 #include <stdio.h>
 
 void display_matrix(int matrix[][2], int num_row) {
@@ -61,6 +25,12 @@ int main() {
   int result[3][2] = {0};
   
   // your code starts here
+  void add(int mat_a[][2], int mat_b[][2], int result[][2]){
+    for (int i = 0; i < 3; i++)
+        for (int j = 0; j < 2; j++)
+            result[i][j] = mat_a[i][j] + mat_b[i][j];
+  }
+  add(matrix_A, matrix_B, result);
   
   // your code ends here
   
@@ -72,4 +42,3 @@ int main() {
   display_matrix(result, 3);
   return 0;
 }
-```
